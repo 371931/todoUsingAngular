@@ -1,0 +1,65 @@
+.note{
+    width: 100%;
+    display: flex;
+    padding: 20px 10px;
+    justify-content: space-between;
+}
+
+.note > .tick{
+    width: 25px;
+    height: 25px;
+    border: 2px solid lawngreen;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.tick > svg{
+    display: none;
+}
+
+.added{
+    background-color: blue;
+}
+
+.content{
+    user-select: none;
+    position: relative;
+    font-size: 16px;
+}
+
+.contentar{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: none;
+    border: none;
+    visibility:hidden;
+    resize: none;
+    outline: none;
+    color: white;
+}
+
+.contentar::-webkit-scrollbar{
+    display: none;
+}
+
+.del{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+}
+
+.del > svg{
+    cursor: pointer;
+}
+
+.del > svg:last-child{
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    visibility: hidden;
+}

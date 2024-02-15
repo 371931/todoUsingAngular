@@ -44,8 +44,6 @@ export class MainContainerComponent {
   }
 
   edited(event: any, editBtn: any, editTick: any, content: any, contentEdit: any) {
-    console.log(editTick);
-
     content.innerText = contentEdit.value;
     editTick.style.visibility = "hidden";
     event.target.style.visibility = "hidden";

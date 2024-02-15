@@ -33,4 +33,16 @@ export class NotesService{
         console.log(this.notes);
     }
 
+    localSet(){
+        localStorage.setItem("notesAngular",JSON.stringify(this.notes));
+    }
+
+    localGet(){ 
+        let notesLocal: any = localStorage.getItem("notesAngular");
+        this.notes = JSON.parse(notesLocal);
+    }
+
+    editNote(id:number,content: any){
+        let note: any = this.notes.find((val)=> val.id = id);
+    }
 }

@@ -17,17 +17,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
+  noteService: any = inject(NotesService);
+
+  ngOnInit(): void {
+    this.noteService.localGet();
+    this.notesArr = this.noteService.getAllNotes();
+  }
 
   title = 'myownFirst';
 
-  noteService: any = inject(NotesService);
   notesArr: Notes[] = [];
-
-  constructor(){
-    this.notesArr = this.noteService.getAllNotes();
-  }
-  ngOnInit(): void {
-  }
 
   id: number = 0;
 
@@ -36,9 +35,11 @@ export class AppComponent implements OnInit{
     if(noteInput.value !== ""){
       this.noteService.addNote(this.id,noteInput.value,0);
       noteInput.value = "";
-      // this.noteService.localSet();
+      this.noteService.localSet();
     }else{
       alert("enter a todo");
     } 
+
+    this.noteService.localGet();
   }
 }
